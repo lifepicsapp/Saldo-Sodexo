@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kgC-SL-Ku7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - Cartões-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Saldo_Sodexo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="pza-B3-Xc1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCartao" textLabel="nU6-mn-cUD" detailTextLabel="yhd-vm-Tfh" style="IBUITableViewCellStyleSubtitle" id="ks6-0r-KY6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ks6-0r-KY6" id="h5P-b6-fPx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nU6-mn-cUD">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yhd-vm-Tfh">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="tJ8-7b-h5x"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Eaz-7e-cKx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pza-B3-Xc1" secondAttribute="trailing" id="0iP-ag-86l"/>
+                            <constraint firstItem="pza-B3-Xc1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="EqA-B0-F3N"/>
+                            <constraint firstItem="pza-B3-Xc1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="r15-3b-Ak0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pza-B3-Xc1" secondAttribute="bottom" id="x19-d8-elY"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pza-B3-Xc1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="x19-d8-elY"/>
+                                <exclude reference="0iP-ag-86l"/>
+                                <exclude reference="EqA-B0-F3N"/>
+                                <exclude reference="r15-3b-Ak0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="x19-d8-elY"/>
+                                <include reference="0iP-ag-86l"/>
+                                <include reference="EqA-B0-F3N"/>
+                                <include reference="r15-3b-Ak0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pza-B3-Xc1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cartões" id="4Ew-Dq-Hp5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="L8Q-MU-ANo">
+                            <connections>
+                                <segue destination="LI9-Ui-tiY" kind="show" id="Tfb-F6-kWr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="CoN-Md-JZx" kind="show" identifier="sgCaptcha" id="8r8-t5-Aci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="405"/>
+        </scene>
+        <!--Captcha View Controller - Captcha-->
+        <scene sceneID="hIg-Q2-LRx">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="CoN-Md-JZx" customClass="CaptchaViewController" customModule="Saldo_Sodexo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kDi-ln-wdp"/>
+                        <viewControllerLayoutGuide type="bottom" id="uiJ-qn-Kxq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hJI-II-7TR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDt-49-WxC">
+                                <rect key="frame" x="50" y="20" width="220" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="50" y="87" width="220" height="80"/>
+                                </variation>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rTq-sU-IYz">
+                                <rect key="frame" x="150" y="50" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="150" y="117" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Código inválido." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-Fy-HES">
+                                <rect key="frame" x="50" y="146" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="213" width="112" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o código" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5W-PD-Sgg">
+                                <rect key="frame" x="50" y="108" width="112" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="104" y="175" width="112" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CDt-49-WxC"/>
+                                <exclude reference="rTq-sU-IYz"/>
+                                <exclude reference="wFB-Fy-HES"/>
+                                <exclude reference="X5W-PD-Sgg"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="CDt-49-WxC"/>
+                                <include reference="rTq-sU-IYz"/>
+                                <include reference="wFB-Fy-HES"/>
+                                <include reference="X5W-PD-Sgg"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="do0-mg-O5V" appends="YES" id="EOU-63-GVM"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Captcha" id="fB1-1t-HM4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="J4Y-zD-1cj">
+                            <connections>
+                                <action selector="verifica:" destination="CoN-Md-JZx" id="PKI-zR-hn3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="aiCarregando" destination="rTq-sU-IYz" id="fzJ-C3-1eO"/>
+                        <outlet property="imgCaptcha" destination="CDt-49-WxC" id="aSr-pj-sIr"/>
+                        <outlet property="lblStatus" destination="wFB-Fy-HES" id="peC-iu-Pxa"/>
+                        <outlet property="txtCaptcha" destination="X5W-PD-Sgg" id="yEA-E3-YWO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rzk-v3-O1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="do0-mg-O5V">
+                    <connections>
+                        <action selector="cancela:" destination="CoN-Md-JZx" id="W7J-pQ-cba"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="234" y="969"/>
+        </scene>
+        <!--Cartao View Controller - Novo Cartão-->
+        <scene sceneID="Put-a0-AsW">
+            <objects>
+                <viewController id="LI9-Ui-tiY" customClass="CartaoViewController" customModule="Saldo_Sodexo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c7q-0D-71W"/>
+                        <viewControllerLayoutGuide type="bottom" id="xgC-hd-m8l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3WT-S3-IFM">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número do Cartão" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fs1-Iw-NGq">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="83" width="280" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="83" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-cw-C7r">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="121" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Selecione um tipo de cartão" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7G-bc-WzI">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="159" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fs1-Iw-NGq"/>
+                                <exclude reference="b1f-cw-C7r"/>
+                                <exclude reference="N7G-bc-WzI"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fs1-Iw-NGq"/>
+                                <include reference="b1f-cw-C7r"/>
+                                <include reference="N7G-bc-WzI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo Cartão" id="2p8-o0-qUr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="kdf-Da-DYX">
+                            <connections>
+                                <action selector="salvaCartao:" destination="LI9-Ui-tiY" id="Lxt-HW-zVq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtCpf" destination="b1f-cw-C7r" id="TLL-Xy-zDH"/>
+                        <outlet property="txtNumero" destination="fs1-Iw-NGq" id="ZhW-j1-k0l"/>
+                        <outlet property="txtTipo" destination="N7G-bc-WzI" id="GPL-Sp-duK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJm-xS-oFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5ek-Dx-T5B">
+            <objects>
+                <navigationController id="kgC-SL-Ku7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oo9-TJ-L6N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="MXV-JA-BxQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWK-Qv-e3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376.5" y="405"/>
+        </scene>
+    </scenes>
+</document>
