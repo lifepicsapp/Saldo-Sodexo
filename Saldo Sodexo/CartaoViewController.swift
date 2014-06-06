@@ -33,14 +33,35 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
+    func validaCampos() -> Bool {
+        var msg = ""
+        if self.txtNumero.text.isEmpty {
+            msg += "Preencha o número do cartão\n"
+        }
+        if self.txtCpf.text.isEmpty {
+            msg += "Preencha o CPF\n"
+        }
+        if !self.tipo {
+            msg += "Selecione um tipo de cartão\n"
+        }
+        
+        var isValido = msg == ""
+        if !isValido {
+            let alert = UIAlertView()
+            alert.title = "Verificar"
+            alert.message = msg
+            alert.addButtonWithTitle("OK")
+            alert.show()
+        }
+        
+        return isValido
+    }
+    
     @IBAction func salvaCartao(sender : AnyObject) {
-        var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        var entity = NSEntityDescription.entityForName("Cartao", inManagedObjectContext: appDelegate.managedObjectContext)
-        var cartao = Cartao(entity: entity, insertIntoManagedObjectContext: appDelegate.managedObjectContext)
-        cartao.idTipo = self.tipo.identificador
-        cartao.numero = self.txtNumero.text
-        cartao.cpf = self.txtCpf.text
-        appDelegate.saveContext()
+        if self.validaCampos() {
+            Cartao.salva(self.txtNumero.text, cpf:self.txtCpf.text, idTipo:self.tipo.identificador)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {

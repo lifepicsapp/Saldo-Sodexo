@@ -10,8 +10,9 @@ import UIKit
 
 class Tipo: NSObject {
     var id: Int!
-    var descricao:String!
-    var identificador:String!
+    var descricao: String!
+    var identificador: String!
+    var imagem: UIImage!
     
     init() {
         super.init()
@@ -52,11 +53,11 @@ class Tipo: NSObject {
         return arrTipos
     }
     
-    class func tituloPorIdentificador(identificador: String) -> String {
+    class func buscaPorId(identificador: String) -> Tipo {
         var arrTipos = self.listaTodos()
-        var predicate = NSPredicate(format: "self.identificador == %@", identificador)
+        var predicate = NSPredicate(format: "identificador == %@", identificador)
         var arrFiltrado = arrTipos.filteredArrayUsingPredicate(predicate) as NSArray
         
-        return arrFiltrado.objectAtIndex(0).descricao
+        return arrFiltrado.objectAtIndex(0) as Tipo
     }
 }
