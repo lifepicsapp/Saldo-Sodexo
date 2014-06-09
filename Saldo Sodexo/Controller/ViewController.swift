@@ -24,9 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue.identifier == "sgCaptcha" {
-            var controller = segue.destinationViewController as CaptchaViewController
-            controller.cartao = self.cartao
+        if segue.identifier {
+            if segue.identifier == "sgCaptcha" {
+                var controller = segue.destinationViewController as CaptchaViewController
+                controller.cartao = self.cartao
+            }
         }
     }
     

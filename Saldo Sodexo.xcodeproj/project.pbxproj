@@ -10,13 +10,13 @@
 		5A67EAE9EB0046E195843F82 /* libPods-Saldo Sodexo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */; };
 		AF71F6891941049D005E73C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF71F6881941049D005E73C9 /* AppDelegate.swift */; };
 		AF71F68C1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF71F68A1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld */; };
-		AF71F68E1941049D005E73C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF71F68D1941049D005E73C9 /* ViewController.swift */; };
 		AF71F6911941049D005E73C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF71F68F1941049D005E73C9 /* Main.storyboard */; };
 		AF71F6931941049D005E73C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF71F6921941049D005E73C9 /* Images.xcassets */; };
-		AF7C0CAC194133B300CC4ABB /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C0CAB194133B300CC4ABB /* CaptchaViewController.swift */; };
-		AFCB3F5B19414A6B008D4F06 /* Tipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCB3F5A19414A6B008D4F06 /* Tipo.swift */; };
-		AFCB3F5D19414B0D008D4F06 /* Cartao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCB3F5C19414B0D008D4F06 /* Cartao.swift */; };
-		AFCB3F5F19414BAF008D4F06 /* CartaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCB3F5E19414BAF008D4F06 /* CartaoViewController.swift */; };
+		AFBB77311942899400EA5D0A /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772B1942899400EA5D0A /* CaptchaViewController.swift */; };
+		AFBB77321942899400EA5D0A /* CartaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772C1942899400EA5D0A /* CartaoViewController.swift */; };
+		AFBB77331942899400EA5D0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772D1942899400EA5D0A /* ViewController.swift */; };
+		AFBB77341942899400EA5D0A /* Cartao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772F1942899400EA5D0A /* Cartao.swift */; };
+		AFBB77351942899400EA5D0A /* Tipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB77301942899400EA5D0A /* Tipo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,14 +25,14 @@
 		AF71F6871941049D005E73C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF71F6881941049D005E73C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF71F68B1941049D005E73C9 /* Saldo_Sodexo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Saldo_Sodexo.xcdatamodel; sourceTree = "<group>"; };
-		AF71F68D1941049D005E73C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF71F6921941049D005E73C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF7C0CA719410FCA00CC4ABB /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = pt; path = pt.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF7C0CA81941192A00CC4ABB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		AF7C0CAB194133B300CC4ABB /* CaptchaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaViewController.swift; sourceTree = "<group>"; };
-		AFCB3F5A19414A6B008D4F06 /* Tipo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tipo.swift; sourceTree = "<group>"; };
-		AFCB3F5C19414B0D008D4F06 /* Cartao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cartao.swift; sourceTree = "<group>"; };
-		AFCB3F5E19414BAF008D4F06 /* CartaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartaoViewController.swift; sourceTree = "<group>"; };
+		AFBB772B1942899400EA5D0A /* CaptchaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaViewController.swift; sourceTree = "<group>"; };
+		AFBB772C1942899400EA5D0A /* CartaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartaoViewController.swift; sourceTree = "<group>"; };
+		AFBB772D1942899400EA5D0A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFBB772F1942899400EA5D0A /* Cartao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cartao.swift; sourceTree = "<group>"; };
+		AFBB77301942899400EA5D0A /* Tipo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tipo.swift; sourceTree = "<group>"; };
 		E4BB9D0C8D624549B53B4CA4 /* Pods-Saldo Sodexo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saldo Sodexo.xcconfig"; path = "Pods/Pods-Saldo Sodexo.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,9 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				AF71F6851941049D005E73C9 /* Saldo Sodexo */,
-				AF71F6841941049D005E73C9 /* Products */,
 				E4BB9D0C8D624549B53B4CA4 /* Pods-Saldo Sodexo.xcconfig */,
 				2F3F0A1C5DAF4A10A98D5154 /* Frameworks */,
+				AF71F6841941049D005E73C9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,15 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				AF71F6881941049D005E73C9 /* AppDelegate.swift */,
-				AF71F68D1941049D005E73C9 /* ViewController.swift */,
-				AFCB3F5E19414BAF008D4F06 /* CartaoViewController.swift */,
-				AF7C0CAB194133B300CC4ABB /* CaptchaViewController.swift */,
 				AF71F68F1941049D005E73C9 /* Main.storyboard */,
-				AF71F6921941049D005E73C9 /* Images.xcassets */,
 				AF71F68A1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld */,
+				AFBB772E1942899400EA5D0A /* Model */,
+				AFBB772A1942899400EA5D0A /* Controller */,
 				AF71F6861941049D005E73C9 /* Supporting Files */,
-				AFCB3F5A19414A6B008D4F06 /* Tipo.swift */,
-				AFCB3F5C19414B0D008D4F06 /* Cartao.swift */,
+				AF71F6921941049D005E73C9 /* Images.xcassets */,
 			);
 			path = "Saldo Sodexo";
 			sourceTree = "<group>";
@@ -98,6 +95,25 @@
 				AF7C0CA81941192A00CC4ABB /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFBB772A1942899400EA5D0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFBB772D1942899400EA5D0A /* ViewController.swift */,
+				AFBB772C1942899400EA5D0A /* CartaoViewController.swift */,
+				AFBB772B1942899400EA5D0A /* CaptchaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFBB772E1942899400EA5D0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFBB772F1942899400EA5D0A /* Cartao.swift */,
+				AFBB77301942899400EA5D0A /* Tipo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,13 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF71F68E1941049D005E73C9 /* ViewController.swift in Sources */,
-				AFCB3F5B19414A6B008D4F06 /* Tipo.swift in Sources */,
+				AFBB77331942899400EA5D0A /* ViewController.swift in Sources */,
+				AFBB77311942899400EA5D0A /* CaptchaViewController.swift in Sources */,
+				AFBB77351942899400EA5D0A /* Tipo.swift in Sources */,
 				AF71F6891941049D005E73C9 /* AppDelegate.swift in Sources */,
+				AFBB77321942899400EA5D0A /* CartaoViewController.swift in Sources */,
 				AF71F68C1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld in Sources */,
-				AF7C0CAC194133B300CC4ABB /* CaptchaViewController.swift in Sources */,
-				AFCB3F5F19414BAF008D4F06 /* CartaoViewController.swift in Sources */,
-				AFCB3F5D19414B0D008D4F06 /* Cartao.swift in Sources */,
+				AFBB77341942899400EA5D0A /* Cartao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

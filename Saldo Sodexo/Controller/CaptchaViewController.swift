@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
 class CaptchaViewController: UIViewController {
     
-    let baseUrl = "https://sodexosaldocartao.com.br/saldocartao"
     var cartao : Cartao!
+    var manager = AFHTTPRequestOperationManager(baseURL: NSURL(string: "https://sodexosaldocartao.com.br"))
     
     @IBOutlet var txtCaptcha : UITextField
     @IBOutlet var imgCaptcha : UIImageView
@@ -21,17 +22,12 @@ class CaptchaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtCaptcha.becomeFirstResponder()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         self.imgCaptcha.image = nil
         self.aiCarregando.startAnimating()
-        var url = NSURL(string: self.baseUrl + "/jcaptcha.do")
-        var operation = AFHTTPRequestOperation(request: NSURLRequest(URL: url))
-        operation.responseSerializer = AFImageResponseSerializer()
-        operation.setCompletionBlockWithSuccess({operation, responseObject in
+        
+        self.manager.responseSerializer = AFImageResponseSerializer()
+        self.manager.GET("/saldocartao/jcaptcha.do", parameters: nil, success: {operation, responseObject in
             self.aiCarregando.stopAnimating()
             self.imgCaptcha.image = responseObject as UIImage
             self.txtCaptcha.text = ""
@@ -40,9 +36,11 @@ class CaptchaViewController: UIViewController {
                 self.aiCarregando.stopAnimating()
                 self.lblStatus.hidden = false
                 self.txtCaptcha.text = ""
-            }
-        )
-        operation.start()
+            })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,17 +56,19 @@ class CaptchaViewController: UIViewController {
     }
 
     @IBAction func verifica(sender : AnyObject) {
-        var manager = AFHTTPRequestOperationManager()
+        self.manager.responseSerializer = AFHTTPResponseSerializer()
         
         var params = Dictionary<String, String>()
         params.updateValue(self.cartao.idTipo, forKey: "service")
         params.updateValue(self.cartao.numero, forKey: "cardNumber")
         params.updateValue(self.cartao.cpf, forKey: "cpf")
         params.updateValue(self.txtCaptcha.text, forKey: "jcaptcha_response")
-        params.updateValue("11", forKey: "x")
-        params.updateValue("10", forKey: "y")
-        
-        var url = self.baseUrl + "/consultaSaldo.do?operation=consult"
+        self.manager.POST("/saldocartao/consultaSaldo.do?operation=consult", parameters: params, success: {operation, responseObject in
+            println(NSString(data:responseObject as NSData, encoding: NSISOLatin1StringEncoding))
+            },
+            failure: {operation, error in
+                
+            })
     }
 
     @IBAction func cancela(sender : AnyObject) {
