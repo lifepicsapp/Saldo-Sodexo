@@ -30,4 +30,11 @@ class Cartao: NSManagedObject {
         cartao.cpf = cpf
         appDelegate.saveContext()
     }
+    
+    class func deleta(cartao: Cartao) {
+        var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.managedObjectContext.deleteObject(cartao)
+        appDelegate.saveContext()
+    }
+    
 }

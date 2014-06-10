@@ -12,7 +12,7 @@ import CoreData
 class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var arrTipos = Tipo.listaTodos()
-    var tipo : Tipo!
+    var tipo: Tipo!
     
     @IBOutlet var txtNumero : UITextField
     @IBOutlet var txtCpf : UITextField
@@ -60,7 +60,7 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func salvaCartao(sender : AnyObject) {
         if self.validaCampos() {
             Cartao.salva(self.txtNumero.text, cpf:self.txtCpf.text, idTipo:self.tipo.identificador)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController.popViewControllerAnimated(true)
         }
     }
     

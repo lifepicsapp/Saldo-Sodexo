@@ -9,10 +9,10 @@
 import UIKit
 import Foundation
 
-class CaptchaViewController: UIViewController {
+class CaptchaViewController: UIViewController, NSURLConnectionDelegate, NSURLConnectionDataDelegate {
     
-    var cartao : Cartao!
-    var manager = AFHTTPRequestOperationManager(baseURL: NSURL(string: "https://sodexosaldocartao.com.br"))
+    let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://sodexosaldocartao.com.br"))
+    var cartao: Cartao!
     
     @IBOutlet var txtCaptcha : UITextField
     @IBOutlet var imgCaptcha : UIImageView
@@ -27,7 +27,7 @@ class CaptchaViewController: UIViewController {
         self.aiCarregando.startAnimating()
         
         self.manager.responseSerializer = AFImageResponseSerializer()
-        self.manager.GET("/saldocartao/jcaptcha.do", parameters: nil, success: {operation, responseObject in
+        self.manager.GET("/saldocartao/jcaptcha.do", parameters: nil, success: {task, responseObject in
             self.aiCarregando.stopAnimating()
             self.imgCaptcha.image = responseObject as UIImage
             self.txtCaptcha.text = ""
@@ -56,15 +56,23 @@ class CaptchaViewController: UIViewController {
     }
 
     @IBAction func verifica(sender : AnyObject) {
-        self.manager.responseSerializer = AFHTTPResponseSerializer()
-        
         var params = Dictionary<String, String>()
         params.updateValue(self.cartao.idTipo, forKey: "service")
         params.updateValue(self.cartao.numero, forKey: "cardNumber")
         params.updateValue(self.cartao.cpf, forKey: "cpf")
         params.updateValue(self.txtCaptcha.text, forKey: "jcaptcha_response")
-        self.manager.POST("/saldocartao/consultaSaldo.do?operation=consult", parameters: params, success: {operation, responseObject in
-            println(NSString(data:responseObject as NSData, encoding: NSISOLatin1StringEncoding))
+        
+//        var serializer = AFHTTPResponseSerializer()
+//        self.manager.responseSerializer = serializer
+        self.manager.responseSerializer.acceptableContentTypes = NSSet(object: "text/html")
+        self.manager.POST("/saldocartao/consultaSaldo.do?operation=consult", parameters: params, success: {task, responseObject in
+            
+            println(task.response.MIMEType)
+            println(task.response)
+            println(task.currentRequest)
+            println(task.originalRequest)
+            
+            println(responseObject)
             },
             failure: {operation, error in
                 

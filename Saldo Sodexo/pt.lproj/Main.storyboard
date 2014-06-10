@@ -74,16 +74,16 @@
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pza-B3-Xc1"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
                             <mask key="constraints">
                                 <include reference="x19-d8-elY"/>
                                 <include reference="0iP-ag-86l"/>
                                 <include reference="EqA-B0-F3N"/>
                                 <include reference="r15-3b-Ak0"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="pza-B3-Xc1"/>
                             </mask>
                         </variation>
                     </view>
@@ -95,6 +95,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="pza-B3-Xc1" id="c4X-NS-O08"/>
                         <segue destination="CoN-Md-JZx" kind="show" identifier="sgCaptcha" id="8r8-t5-Aci"/>
                     </connections>
                 </viewController>
@@ -102,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="234" y="405"/>
         </scene>
-        <!--Captcha View Controller - Captcha-->
+        <!--Captcha View Controller - Código-->
         <scene sceneID="hIg-Q2-LRx">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="CoN-Md-JZx" customClass="CaptchaViewController" customModule="Saldo_Sodexo" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +169,7 @@
                             <outletCollection property="gestureRecognizers" destination="do0-mg-O5V" appends="YES" id="EOU-63-GVM"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Captcha" id="fB1-1t-HM4">
+                    <navigationItem key="navigationItem" title="Código" id="fB1-1t-HM4">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="J4Y-zD-1cj">
                             <connections>
                                 <action selector="verifica:" destination="CoN-Md-JZx" id="PKI-zR-hn3"/>
@@ -190,7 +191,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="234" y="969"/>
+            <point key="canvasLocation" x="882" y="963"/>
         </scene>
         <!--Cartao View Controller - Novo Cartão-->
         <scene sceneID="Put-a0-AsW">
@@ -264,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJm-xS-oFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="405"/>
+            <point key="canvasLocation" x="882" y="405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5ek-Dx-T5B">

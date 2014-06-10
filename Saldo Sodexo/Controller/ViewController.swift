@@ -10,12 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var arrCartoes = NSMutableArray(array:Cartao.listaTodos())
-    var cartao : Cartao!
+    var arrCartoes: NSMutableArray!
+    var cartao: Cartao!
+    
+    @IBOutlet var tableView : UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.arrCartoes = NSMutableArray(array:Cartao.listaTodos())
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        return "Selecione um cartão"
+        return self.arrCartoes.count>0 ? "Selecione um cartão ou deslize para apagar" : "Você ainda não possui cartões cadastrados"
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -57,6 +64,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
         return true
+    }
+    
+    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            var cartao = self.arrCartoes[indexPath.item] as Cartao
+            Cartao.deleta(cartao)
+            self.arrCartoes.removeObject(cartao)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
