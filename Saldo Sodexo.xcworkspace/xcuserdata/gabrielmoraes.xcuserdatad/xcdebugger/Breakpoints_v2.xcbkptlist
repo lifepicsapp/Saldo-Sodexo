@@ -6,17 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Saldo Sodexo/Controller/CaptchaViewController.swift"
-            timestampString = "424059160.400666"
+            timestampString = "424106867.550214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "verifica(_:)"
-            landmarkType = "5">
+            startingLineNumber = "108"
+            endingLineNumber = "108">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Saldo Sodexo/Controller/CaptchaViewController.swift"
-            timestampString = "424059160.400666"
+            timestampString = "424106867.550214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "verifica(_:)"
-            landmarkType = "5">
+            startingLineNumber = "114"
+            endingLineNumber = "114">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
