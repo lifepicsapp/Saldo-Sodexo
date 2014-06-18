@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A67EAE9EB0046E195843F82 /* libPods-Saldo Sodexo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */; };
+		5A67EAE9EB0046E195843F82 /* libPods-Saldo Sodexo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		AF1F486F194FA492001954A3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1F486E194FA492001954A3 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF71F6891941049D005E73C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF71F6881941049D005E73C9 /* AppDelegate.swift */; };
 		AF71F68C1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF71F68A1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld */; };
 		AF71F6911941049D005E73C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF71F68F1941049D005E73C9 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Saldo Sodexo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1F486E194FA492001954A3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AF71F6831941049D005E73C9 /* Saldo Sodexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saldo Sodexo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF71F6871941049D005E73C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF71F6881941049D005E73C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1F486F194FA492001954A3 /* CFNetwork.framework in Frameworks */,
 				5A67EAE9EB0046E195843F82 /* libPods-Saldo Sodexo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +54,7 @@
 		2F3F0A1C5DAF4A10A98D5154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF1F486E194FA492001954A3 /* CFNetwork.framework */,
 				87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */,
 			);
 			name = Frameworks;
@@ -149,6 +153,7 @@
 				TargetAttributes = {
 					AF71F6821941049D005E73C9 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = S8JLZKZ7LG;
 					};
 				};
 			};
@@ -326,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Saldo Sodexo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -340,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Saldo Sodexo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -4,6 +4,7 @@
 target "Saldo Sodexo" do
 
 pod "AFNetworking"
+pod 'ASIHTTPRequest'
 
 end
 
