@@ -14,50 +14,47 @@ class Tipo: NSObject {
     var identificador: String!
     var imagem: UIImage!
     
-    init() {
-        super.init()
-    }
-    
-    class func listaTodos() -> NSArray {
-        var arrTipos = NSMutableArray()
+    class func listaTodos() -> [Tipo] {
+        var arrTipos = [Tipo]()
         
         var tipo = Tipo()
         tipo.descricao = "Refeição Pass"
         tipo.identificador = "5;1;6"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Alimentação Pass"
         tipo.identificador = "5;2;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Gift Pass"
         tipo.identificador = "5;26;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Premium Pass"
         tipo.identificador = "5;25;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Combustível Pass"
         tipo.identificador = "5;30;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Alimentação Pass"
         tipo.identificador = "5;026;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         tipo = Tipo()
         tipo.descricao = "Vale-Cultura da Sodexo"
         tipo.identificador = "5;27;4"
-        arrTipos.addObject(tipo)
+        arrTipos.append(tipo)
         
         return arrTipos
     }
     
-    class func buscaPorId(identificador: String) -> Tipo {
+    class func buscaPorId(identificador: String) -> Tipo! {
         var arrTipos = self.listaTodos()
-        var predicate = NSPredicate(format: "identificador == %@", identificador)
-        var arrFiltrado = arrTipos.filteredArrayUsingPredicate(predicate) as NSArray
+        var arrFiltrado = arrTipos.filter { tipo in
+            tipo.identificador == identificador
+        }
         
-        return arrFiltrado.objectAtIndex(0) as Tipo
+        return arrFiltrado.first
     }
 }

@@ -15,10 +15,10 @@ class Cartao: NSManagedObject {
     @NSManaged var numero: String
     @NSManaged var cpf: String
     
-    class func listaTodos() -> NSArray? {
+    class func listaTodos() -> [AnyObject]! {
         var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         var request = NSFetchRequest(entityName: "Cartao")
-        return appDelegate.managedObjectContext.executeFetchRequest(request, error: nil)
+        return appDelegate.managedObjectContext?.executeFetchRequest(request, error: nil)
     }
     
     class func salva(numero: String, cpf: String, idTipo: String) {
@@ -33,7 +33,7 @@ class Cartao: NSManagedObject {
     
     class func deleta(cartao: Cartao) {
         var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        appDelegate.managedObjectContext.deleteObject(cartao)
+        appDelegate.managedObjectContext?.deleteObject(cartao)
         appDelegate.saveContext()
     }
     

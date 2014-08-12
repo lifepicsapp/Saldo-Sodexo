@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A67EAE9EB0046E195843F82 /* libPods-Saldo Sodexo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87799D623CD445D7AF052EA2 /* libPods-Saldo Sodexo.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		AF18885F1999AB6900387D87 /* Cartao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772F1942899400EA5D0A /* Cartao.swift */; };
 		AF1F486F194FA492001954A3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1F486E194FA492001954A3 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF71F6891941049D005E73C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF71F6881941049D005E73C9 /* AppDelegate.swift */; };
 		AF71F68C1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF71F68A1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld */; };
@@ -16,7 +17,6 @@
 		AFBB77311942899400EA5D0A /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772B1942899400EA5D0A /* CaptchaViewController.swift */; };
 		AFBB77321942899400EA5D0A /* CartaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772C1942899400EA5D0A /* CartaoViewController.swift */; };
 		AFBB77331942899400EA5D0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772D1942899400EA5D0A /* ViewController.swift */; };
-		AFBB77341942899400EA5D0A /* Cartao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB772F1942899400EA5D0A /* Cartao.swift */; };
 		AFBB77351942899400EA5D0A /* Tipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB77301942899400EA5D0A /* Tipo.swift */; };
 /* End PBXBuildFile section */
 
@@ -225,12 +225,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFBB77331942899400EA5D0A /* ViewController.swift in Sources */,
+				AF18885F1999AB6900387D87 /* Cartao.swift in Sources */,
 				AFBB77311942899400EA5D0A /* CaptchaViewController.swift in Sources */,
 				AFBB77351942899400EA5D0A /* Tipo.swift in Sources */,
 				AF71F6891941049D005E73C9 /* AppDelegate.swift in Sources */,
 				AFBB77321942899400EA5D0A /* CartaoViewController.swift in Sources */,
 				AF71F68C1941049D005E73C9 /* Saldo_Sodexo.xcdatamodeld in Sources */,
-				AFBB77341942899400EA5D0A /* Cartao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

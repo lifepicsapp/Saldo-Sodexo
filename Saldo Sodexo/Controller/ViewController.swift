@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var arrCartoes: NSMutableArray!
+    var arrCartoes: [AnyObject]!
     var cartao: Cartao!
     
-    @IBOutlet var tableView : UITableView
+    @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +21,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.arrCartoes = NSMutableArray(array:Cartao.listaTodos())
+        self.arrCartoes = Cartao.listaTodos()
         self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue.identifier {
-            if segue.identifier == "sgCaptcha" {
-                var controller = segue.destinationViewController as CaptchaViewController
-                controller.cartao = self.cartao
-            }
+        if segue.identifier == "sgCaptcha" {
+            var controller = segue.destinationViewController as CaptchaViewController
+            controller.cartao = self.cartao
         }
     }
     
@@ -58,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var tipo = Tipo.buscaPorId(cartao.idTipo)
         cell.textLabel.text = cartao.numero + " (\(tipo.descricao))"
         cell.detailTextLabel.text = cartao.cpf
-//        cell.imageView.image = UIImage(named:tipo.identificador)
+        cell.imageView.image = UIImage(named:tipo.identificador)
         return cell
     }
     
@@ -70,7 +67,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if editingStyle == UITableViewCellEditingStyle.Delete {
             var cartao = self.arrCartoes[indexPath.item] as Cartao
             Cartao.deleta(cartao)
-            self.arrCartoes.removeObject(cartao)
+            self.arrCartoes = self.arrCartoes.filter({ cartaoFiltro in
+                cartaoFiltro as Cartao != cartao
+            })
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

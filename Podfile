@@ -3,8 +3,7 @@
 
 target "Saldo Sodexo" do
 
-pod "AFNetworking"
-pod 'ASIHTTPRequest'
+pod 'AFNetworking'
 
 end
 

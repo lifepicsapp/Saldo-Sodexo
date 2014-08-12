@@ -14,9 +14,9 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var arrTipos = Tipo.listaTodos()
     var tipo: Tipo!
     
-    @IBOutlet var txtNumero : UITextField
-    @IBOutlet var txtCpf : UITextField
-    @IBOutlet var txtTipo : UITextField
+    @IBOutlet var txtNumero : UITextField!
+    @IBOutlet var txtCpf : UITextField!
+    @IBOutlet var txtTipo : UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func validaCampos() -> Bool {
@@ -65,7 +64,7 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
-        self.tipo = self.arrTipos.objectAtIndex(0) as Tipo
+        self.tipo = self.arrTipos.first
         self.txtTipo.text = self.tipo.descricao
         return 1
     }
@@ -75,12 +74,12 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-        var tipo = self.arrTipos.objectAtIndex(row) as Tipo
+        var tipo = self.arrTipos[row]
         return tipo.descricao
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
-        self.tipo = self.arrTipos.objectAtIndex(row) as Tipo
+        self.tipo = self.arrTipos[row]
         self.txtTipo.text = self.tipo.descricao
     }
 

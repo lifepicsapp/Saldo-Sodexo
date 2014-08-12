@@ -14,43 +14,15 @@ class CaptchaViewController: UIViewController {
     let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://sodexosaldocartao.com.br/"))
     var cartao: Cartao!
     
-    @IBOutlet var txtCaptcha : UITextField
-    @IBOutlet var imgCaptcha : UIImageView
-    @IBOutlet var lblStatus : UILabel
-    @IBOutlet var aiCarregando : UIActivityIndicatorView
+    @IBOutlet var txtCaptcha : UITextField!
+    @IBOutlet var imgCaptcha : UIImageView!
+    @IBOutlet var lblStatus : UILabel!
+    @IBOutlet var aiCarregando : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtCaptcha.becomeFirstResponder()
-        
-        self.imgCaptcha.image = nil
         self.aiCarregando.startAnimating()
-        
-//        var request = NSMutableURLRequest(URL: NSURL(string: "https://sodexosaldocartao.com.br/saldocartao/jcaptcha.do"))
-        //        request.setValue("chunked", forHTTPHeaderField: "Transfer-Encoding")
-//        request.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
-        //        request.setValue(self.cartao.idTipo, forHTTPHeaderField: "service")
-        //        request.setValue(self.cartao.numero, forHTTPHeaderField: "cardNumber")
-        //        request.setValue(self.cartao.cpf, forHTTPHeaderField: "cpf")
-        //        request.setValue(self.txtCaptcha.text, forHTTPHeaderField: "jcaptcha_response")
-//        request.HTTPMethod = "GET"
-//        request.HTTPBody = NSData(contentsOfFile: postBody)
-        
-//        var manager = AFHTTPRequestOperationManager(baseURL:NSURL(string: "https://sodexosaldocartao.com.br/saldocartao/consultaSaldo.do?operation=consult"))
-        
-//        var operation = AFHTTPRequestOperation(request: request)
-//        operation.responseSerializer = AFImageResponseSerializer()
-//        operation.setCompletionBlockWithSuccess({operation, responseObject in
-//            self.aiCarregando.stopAnimating()
-//                        self.imgCaptcha.image = responseObject as UIImage
-//                        self.txtCaptcha.text = ""
-//            }, failure: {operation, error in
-//                                self.aiCarregando.stopAnimating()
-//                                self.lblStatus.hidden = false
-//                                self.txtCaptcha.text = ""
-//            })
-//        
-//        operation.start()
         
         self.manager.responseSerializer = AFImageResponseSerializer()
         self.manager.GET("/saldocartao/jcaptcha.do", parameters: nil, success: {task, responseObject in
@@ -65,13 +37,8 @@ class CaptchaViewController: UIViewController {
             })
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
@@ -88,48 +55,14 @@ class CaptchaViewController: UIViewController {
         params.updateValue(self.cartao.cpf, forKey: "cpf")
         params.updateValue(self.txtCaptcha.text, forKey: "jcaptcha_response")
         
-//        var postBody = "service=5%3B1%3B6&cardNumber=\(self.cartao.numero)&cpf=\(self.cartao.cpf)&jcaptcha_response=\(self.txtCaptcha.text)"
-        
-//        var request = NSMutableURLRequest(URL: NSURL(string: "https://sodexosaldocartao.com.br/saldocartao/consultaSaldo.do?operation=consult"))
-//        request.setValue("chunked", forHTTPHeaderField: "Transfer-Encoding")
-//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//        request.setValue(self.cartao.idTipo, forHTTPHeaderField: "service")
-//        request.setValue(self.cartao.numero, forHTTPHeaderField: "cardNumber")
-//        request.setValue(self.cartao.cpf, forHTTPHeaderField: "cpf")
-//        request.setValue(self.txtCaptcha.text, forHTTPHeaderField: "jcaptcha_response")
-//        request.HTTPMethod = "POST"
-//        request.HTTPBody = NSData(contentsOfFile: postBody)
-        
-//        var manager = AFHTTPRequestOperationManager(baseURL:NSURL(string: "https://sodexosaldocartao.com.br/saldocartao/consultaSaldo.do?operation=consult"))
-        
-//        var operation = AFHTTPRequestOperation(request: request)
-//        operation.responseSerializer = AFHTTPResponseSerializer()
-//        operation.setCompletionBlockWithSuccess({operation, responseObject in
-//                        println(operation.response.MIMEType)
-//                        println(operation.response)
-//                        println(operation.request)
-//            
-//                        println(NSString(data: responseObject as NSData, encoding: NSISOLatin1StringEncoding))
-//            }, failure: {operation, error in
-//                println(error.description)
-//            })
-//        
-//        operation.start()
-        
         self.manager.responseSerializer = AFHTTPResponseSerializer()
-        
         self.manager.POST("/saldocartao/consultaSaldo.do?operation=consult", parameters: params, success: {task, responseObject in
-            
-            println(task.response.MIMEType)
-            println(task.response)
-            println(task.currentRequest)
-            println(task.originalRequest)
-            
             println(NSString(data: responseObject as NSData, encoding: NSISOLatin1StringEncoding))
             },
             failure: {operation, error in
                 
-            })
+            }
+        )
     }
 
     @IBAction func cancela(sender : AnyObject) {
