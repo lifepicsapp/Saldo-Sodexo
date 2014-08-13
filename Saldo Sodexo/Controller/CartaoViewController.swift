@@ -32,7 +32,9 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.didReceiveMemoryWarning()
     }
     
-    func validaCampos() -> Bool {
+    //MARK: Privates
+    
+    private func validaCampos() -> Bool {
         var msg = ""
         if self.txtNumero.text.isEmpty {
             msg += "Preencha o número do cartão\n"
@@ -56,12 +58,16 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return isValido
     }
     
+    //MARK: Actions
+    
     @IBAction func salvaCartao(sender : AnyObject) {
         if self.validaCampos() {
             Cartao.salva(self.txtNumero.text, cpf:self.txtCpf.text, idTipo:self.tipo.identificador)
             self.navigationController.popViewControllerAnimated(true)
         }
     }
+    
+    //MARK: PickerView Datasource
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
         self.tipo = self.arrTipos.first
@@ -77,6 +83,8 @@ class CartaoViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         var tipo = self.arrTipos[row]
         return tipo.descricao
     }
+    
+    //MARK: PickerView Delegate
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
         self.tipo = self.arrTipos[row]

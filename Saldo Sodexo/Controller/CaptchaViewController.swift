@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class CaptchaViewController: UIViewController {
+class CaptchaViewController: UIViewController, NSURLConnectionDataDelegate {
     
     let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://sodexosaldocartao.com.br/"))
     var cartao: Cartao!
@@ -34,7 +34,8 @@ class CaptchaViewController: UIViewController {
                 self.aiCarregando.stopAnimating()
                 self.lblStatus.hidden = false
                 self.txtCaptcha.text = ""
-            })
+            }
+        )
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,8 @@ class CaptchaViewController: UIViewController {
             controller.cartao = self.cartao
         }
     }
+    
+    //MARK: Actions
 
     @IBAction func verifica(sender : AnyObject) {
         var params = Dictionary<String, String>()
@@ -58,6 +61,7 @@ class CaptchaViewController: UIViewController {
         self.manager.responseSerializer = AFHTTPResponseSerializer()
         self.manager.POST("/saldocartao/consultaSaldo.do?operation=consult", parameters: params, success: {task, responseObject in
             println(NSString(data: responseObject as NSData, encoding: NSISOLatin1StringEncoding))
+            println(task.response.URL.absoluteString)
             },
             failure: {operation, error in
                 

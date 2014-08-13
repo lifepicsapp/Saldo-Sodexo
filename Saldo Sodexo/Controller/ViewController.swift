@@ -36,6 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    //MARK: TableView Datasource
+    
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return 1
     }
@@ -45,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        return self.arrCartoes.count>0 ? "Selecione um cartão ou deslize para apagar" : "Você ainda não possui cartões cadastrados"
+        return self.arrCartoes.count>0 ? "Deslize para apagar" : "Você não possui cartões cadastrados"
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -58,6 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.imageView.image = UIImage(named:tipo.identificador)
         return cell
     }
+    
+    //MARK: TableView Delegate
     
     func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
         return true
